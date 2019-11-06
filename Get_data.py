@@ -35,13 +35,11 @@ class get_data:
     def get_test_data():
         root_path = "/content/proj1/test"
         train_input=[]
-        train_label=[]
 
         img_list = os.listdir(root_path)
         
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
             train_input.append([np.array(image)])
-            train_label.append([np.array(index)])
-        return train_input, train_label
+        return train_input
 
