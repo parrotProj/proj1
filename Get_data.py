@@ -27,7 +27,7 @@ class get_data:
             path = root_path+str(index)
             img_list = os.listdir(path)
             for img in img_list:
-                image = cv2.imread(str(index)+'/'+img, cv2.IMREAD_COLOR)
+                image = cv2.imread(path+'/'+img, cv2.IMREAD_COLOR)
                 train_input.append([np.array(image)])
                 train_label.append([np.array(index)])
         return train_input, train_label
