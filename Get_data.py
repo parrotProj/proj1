@@ -14,18 +14,18 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 class get_data:
-    init_path = "/content/proj1"
+    def __init__():
+        print("access to data")
+    
     def get_train_data():
-        root_path = init_path+"/train"
+        root_path = "/content/proj1/train/"
         
         train_input=[]
         train_label=[]
 
         for index in range(6):
             path = root_path+str(index)
-            print(path)
             img_list = os.listdir(path)
-            get_ipython().system('cd $path')
             for img in img_list:
                 image = cv2.imread(str(index)+'/'+img, cv2.IMREAD_COLOR)
                 train_input.append([np.array(image)])
@@ -33,7 +33,7 @@ class get_data:
         return train_input, train_label
     
     def get_test_data():
-        root_path = init_path+"/test"
+        root_path = "/content/proj1/test"
         train_input=[]
         train_label=[]
 
