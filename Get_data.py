@@ -12,9 +12,9 @@ import os
 from sklearn.preprocessing import OneHotEncoder
 
 
+init_path = "/content/proj1"
 class get_data:
     def __init__(self):
-        init_path = "/content/proj1"
     def get_train_data():
         root_path = init_path+"/train"
         
