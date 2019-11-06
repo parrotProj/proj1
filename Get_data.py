@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# <a href="https://colab.research.google.com/github/minkh93/MLDL/blob/master/Get_data.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
 
 import cv2
 import numpy as np
@@ -13,7 +8,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 class get_data:
     def __init__(self):
-        get_ipython().system('git clone https://github.com/minkh93/MLDL.git')
+
     def get_train_data():
         root_dir='/content/MLDL/train/'
         train_input=[]
