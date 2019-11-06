@@ -33,6 +33,7 @@ class get_data:
         return train_input, train_label
     
     def get_test_data():
+        root_path = "/content/proj1/test"
         train_input=[]
         train_label=[]
 
