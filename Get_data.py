@@ -14,7 +14,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 class get_data:
-    def __init__():
+    def __init__(self):
         print("access to data")
     
     def get_train_data():
