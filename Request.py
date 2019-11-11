@@ -17,7 +17,7 @@ class get_data:
     def __init__(self):
         print("access to data")
     
-    def get_train_data():
+    def train():
         root_path = "/content/proj1/train/"
         
         train_input=[]
@@ -32,7 +32,7 @@ class get_data:
                 train_label.append([np.array(index)])
         return train_input, train_label
     
-    def get_test_data():
+    def test():
         root_path = "/content/proj1/test"
         train_input=[]
 
