@@ -37,14 +37,14 @@ class get_data:
     
     def test():
         root_path = "/content/proj1/test"
-        train_input=[]
+        test_input=[]
 
         img_list = os.listdir(root_path)
         
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-            train_input.append(image)
-        return np.array(train_input)
+            test_input.append(image)
+        return np.array(test_input), img_list
 
 '''
 class imgPreprocessing:
