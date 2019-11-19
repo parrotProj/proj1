@@ -18,8 +18,8 @@ from sklearn.preprocessing import OneHotEncoder
 
 class get_data:
     
-    def train(size=150):
-        self.size = size
+    def train(pixel=150):
+        size = pixel
         root_path = "/content/proj1/train/"
         
         train_input=[]
@@ -35,8 +35,8 @@ class get_data:
                 train_label.append(index)
         return np.array(train_input), train_label
     
-    def test(size=150):
-        self.size = size
+    def test(pixel=150):
+        size = pixel
         root_path = "/content/proj1/test"
         test_input=[]
 
@@ -44,7 +44,7 @@ class get_data:
         
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-            test_input.append(reszie(image,(size,size,3)))
+            test_input.append(resize(image,(size,size,3)))
         return np.array(test_input), img_list
 
 
