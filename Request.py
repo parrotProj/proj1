@@ -17,11 +17,9 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 class get_data:
-    def __init__(self, size=150):
-        self.size = 150;
-        print("access to data")
     
-    def train():
+    def train(size=150):
+        self.size = size
         root_path = "/content/proj1/train/"
         
         train_input=[]
@@ -37,7 +35,8 @@ class get_data:
                 train_label.append(index)
         return np.array(train_input), train_label
     
-    def test():
+    def test(size=150):
+        self.size = size
         root_path = "/content/proj1/test"
         test_input=[]
 
