@@ -19,6 +19,7 @@ from sklearn.preprocessing import OneHotEncoder
 class get_data:
     
     def train(size=150):
+        self.size = size
         root_path = "/content/proj1/train/"
         
         train_input=[]
@@ -35,6 +36,7 @@ class get_data:
         return np.array(train_input), train_label
     
     def test(size=150):
+        self.size = size
         root_path = "/content/proj1/test"
         test_input=[]
 
