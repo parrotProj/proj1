@@ -17,7 +17,8 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 class get_data:
-    def __init__(self):
+    def __init__(self, size=150):
+        self.size = 150;
         print("access to data")
     
     def train():
@@ -31,7 +32,8 @@ class get_data:
             img_list = os.listdir(path)
             for img in img_list:
                 image = cv2.imread(path+'/'+img, cv2.IMREAD_COLOR)
-                train_input.append(image)
+                
+                train_input.append(resize(image,(size,size,3)))
                 train_label.append(index)
         return np.array(train_input), train_label
     
@@ -43,22 +45,7 @@ class get_data:
         
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-            test_input.append(image)
+            test_input.append(reszie(image,(size,size,3)))
         return np.array(test_input), img_list
 
-'''
-class imgPreprocessing:
-    def randomCrop(img, width, height):
-        assert img.shape[0] >= height
-        assert img.shape[1] >= width
-      
-        x = random.randint(0, img.shape[1] - width)
-        y = random.randint(0, img.shape[0] - height)
-        img = img[y:y+height, x:x+width]
 
-        return img
-
-    def resizeImage(img, L):
-        #reshape is not work
-        
-'''
