@@ -17,9 +17,10 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 class get_data:
+    def __init__(self):
+        
     
-    def train(self, size=150):
-        self.size = size
+    def train():
         root_path = "/content/proj1/train/"
         
         train_input=[]
@@ -31,12 +32,11 @@ class get_data:
             for img in img_list:
                 image = cv2.imread(path+'/'+img, cv2.IMREAD_COLOR)
                 
-                train_input.append(resize(image,(size,size,3)))
+                train_input.append(image)
                 train_label.append(index)
         return np.array(train_input), train_label
     
-    def test(self,size=150):
-        self.size = size
+    def test():
         root_path = "/content/proj1/test"
         test_input=[]
 
@@ -44,7 +44,21 @@ class get_data:
         
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-            test_input.append(resize(image,(size,size,3)))
+            test_input.append(image)
         return np.array(test_input), img_list
+    def resizing_train():
+        root_path = "/content/proj1/train/"
+        
+        train_input=[]
+        train_label=[]
 
+        for index in range(6):
+            path = root_path+str(index)
+            img_list = os.listdir(path)
+            for img in img_list:
+                image = cv2.imread(path+'/'+img, cv2.IMREAD_COLOR)
+                
+                train_input.append(resize(image,(size,size)))
+                train_label.append(index)
+        return np.array(train_input), train_label        
 
