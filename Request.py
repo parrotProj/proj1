@@ -18,8 +18,8 @@ from sklearn.preprocessing import OneHotEncoder
 
 class get_data:
     def __init__(self, size=150):
-        self.size = 150;
-        print("access to data")
+        self.size = size;
+        print("the size is ",size)
     
     def train():
         root_path = "/content/proj1/train/"
