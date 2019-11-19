@@ -10,15 +10,9 @@ import pandas as pd
 import os
 import random
 
-from skimage.transform import resize
-from sklearn.preprocessing import OneHotEncoder
-
 
 
 class get_data:
-    def __init__(self):
-        print("access to data")
-    
     def train():
         root_path = "/content/proj1/train/"
         
