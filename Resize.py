@@ -14,7 +14,7 @@ import random
 from skimage.transform import resize
 from sklearn.preprocessing import OneHotEncoder
 
-def resize_train(size):
+def train(size):
     print("input_size : ", size)
     root_path = "/content/proj1/train/"
     
@@ -31,7 +31,7 @@ def resize_train(size):
             train_label.append(index)
     return np.array(train_input), np.array(train_label)
 
-def resize_test(size):
+def test(size):
     root_path = "/content/proj1/test"
     test_input=[]
 
