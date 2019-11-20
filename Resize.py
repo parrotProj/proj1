@@ -27,9 +27,9 @@ def resize_train(size):
         for img in img_list:
             image = cv2.imread(path+'/'+img, cv2.IMREAD_COLOR)
             
-            train_input.append(resize(image,(size,size,3)))
+            train_input.append(cv2.resize(image,(size,size)))
             train_label.append(index)
-    return np.array(train_input), train_label
+    return np.array(train_input), np.array(train_label)
 
 def resize_test(size):
     root_path = "/content/proj1/test"
@@ -39,5 +39,8 @@ def resize_test(size):
 
     for img in img_list:
         image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-        test_input.append(resize(image,(size,size,3)))
-    return np.array(test_input), img_list
+        test_input.append(resize(cv2.image,(size,size)))
+    name = pd.DataFrame(img_list)
+    name = name[0].apply(lambda x:x.split('.')[0])
+
+    return np.array(test_input), np.array(name)
