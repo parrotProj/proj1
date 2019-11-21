@@ -39,7 +39,7 @@ def test(size):
 
     for img in img_list:
         image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
-        test_input.append(resize(cv2.image,(size,size)))
+        test_input.append(cv2.resize(image,(size,size)))
     name = pd.DataFrame(img_list)
     name = name[0].apply(lambda x:x.split('.')[0])
 
