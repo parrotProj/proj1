@@ -14,7 +14,7 @@ import random
 from skimage.transform import resize
 from sklearn.preprocessing import OneHotEncoder
 
-def train(size):
+def train(size,divide=False):
     print("input_size : ", size)
     root_path = "/content/proj1/train/"
     
@@ -29,9 +29,11 @@ def train(size):
             
             train_input.append(cv2.resize(image,(size,size)))
             train_label.append(index)
+    if divide==True:
+        return np.divide(np.array(train_input),255.), np.array(train_label)
     return np.array(train_input), np.array(train_label)
 
-def test(size):
+def test(size,divide=False):
     root_path = "/content/proj1/test"
     test_input=[]
 
@@ -42,5 +44,6 @@ def test(size):
         test_input.append(cv2.resize(image,(size,size)))
     name = pd.DataFrame(img_list)
     name = name[0].apply(lambda x:x.split('.')[0])
-
+    if divide == True:
+        return np.divide(np.array(test_input),255.), np.array(name)
     return np.array(test_input), np.array(name)
